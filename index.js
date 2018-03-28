@@ -1,13 +1,9 @@
+var express = require('express');
 var app = express();
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
     var uid = req.params.uid,
